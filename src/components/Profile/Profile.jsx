@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-const Profile = props => {
+const Profile = user => {
   const {
     username,
     tag,
     location,
     avatar,
     stats: { followers, views, likes },
-  } = props;
+  } = user;
   return (
     <div key={tag}>
       <div>
@@ -37,16 +37,16 @@ const Profile = props => {
 
 Profile.propTypes = {
   user: PropTypes.shape({
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     stats: PropTypes.shape({
       followers: PropTypes.string,
       views: PropTypes.string,
       likes: PropTypes.string,
     }).isRequired,
-  }).isRequired,
+  }),
 };
 
 export default Profile;
