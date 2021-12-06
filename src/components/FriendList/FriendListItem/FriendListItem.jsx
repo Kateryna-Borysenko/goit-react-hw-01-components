@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const FriendListItem = ({ avatar, name, isOnline }) => {
+const FriendListItem = ({ avatar, name, isOnline, id }) => {
   return (
     <li>
       <span>{isOnline}</span>
