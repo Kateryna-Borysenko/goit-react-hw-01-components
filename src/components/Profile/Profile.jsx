@@ -36,12 +36,6 @@ const Profile = user => {
     </div>
   );
 };
-// задать инлайн стиль bg вызовом ф-ции
-const getRandomHexColor = () => {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-};
-
-console.log(getRandomHexColor());
 
 Profile.propTypes = {
   user: PropTypes.shape({
