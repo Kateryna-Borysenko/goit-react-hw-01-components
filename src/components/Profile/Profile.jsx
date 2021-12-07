@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from './Profile.module.css'; //не работает без ./
 
 const Profile = user => {
   const {
@@ -8,32 +9,39 @@ const Profile = user => {
     avatar,
     stats: { followers, views, likes },
   } = user;
+
   return (
-    <div key={tag}>
-      <div>
-        <img src={avatar} alt="user avatar" />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+    <div className={styles.profile} key={tag}>
+      <div className={styles.description}>
+        <img src={avatar} alt="user avatar" className={styles.avatar} />
+        <p className={styles.name}>{username}</p>
+        <p className={styles.tag}>@{tag}</p>
+        <p className={styles.location}>{location}</p>
       </div>
 
-      <ul>
+      <ul className={styles.stats}>
         <li>
-          <span>Followers</span>
-          <span>{followers}</span>
+          <span className={styles.label}>Followers</span>
+          <span className={styles.quantity}>{followers}</span>
         </li>
         <li>
-          <span>Views</span>
-          <span>{views}</span>
+          <span className={styles.label}>Views</span>
+          <span className={styles.quantity}>{views}</span>
         </li>
         <li>
-          <span>Likes</span>
-          <span>{likes}</span>
+          <span className={styles.label}>Likes</span>
+          <span className={styles.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
 };
+// задать инлайн стиль bg вызовом ф-ции
+const getRandomHexColor = () => {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};
+
+console.log(getRandomHexColor());
 
 Profile.propTypes = {
   user: PropTypes.shape({
