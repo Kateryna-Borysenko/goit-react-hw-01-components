@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styles from './Profile.module.css'; //не работает без ./
+import styles from './Profile.module.css';
 
 const Profile = user => {
   const {
@@ -44,9 +44,9 @@ Profile.propTypes = {
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
     stats: PropTypes.shape({
-      followers: PropTypes.string,
-      views: PropTypes.string,
-      likes: PropTypes.string,
+      followers: PropTypes.number,
+      views: PropTypes.number,
+      likes: PropTypes.number,
     }).isRequired,
   }),
 };

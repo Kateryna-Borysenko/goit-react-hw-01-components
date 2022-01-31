@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import styles from './FriendListItem.module.css';
 
-const FriendListItem = ({ avatar, name, isOnline, id }) => {
+const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <li className={styles.item}>
-      {/* рендер по условию - стили для 2х ситуаций */}
       <span className={isOnline ? styles.isOnline : styles.notOnline}>
         {isOnline}
       </span>
